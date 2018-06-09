@@ -1,10 +1,9 @@
-#  What The Text?!
-GROUP MEMBERS:
+# PROJECT TITLE: What The Text?!
+
+# GROUP MEMBERS:
 * Leslie Rose
 * Tim Stevens
 * Marcus Johnson
-
-# PROJECT TITLE: What The Text?!
 
 # PROJECT DESCRIPTION:
 * What The Text?! is an online community where users can come together and share their funniest, craziest, or most 'What The Text?!'-worthy conversations.
