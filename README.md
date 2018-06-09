@@ -1,14 +1,17 @@
-#  What The Text?!
-GROUP MEMBERS:
-Leslie Rose
-Tim Stevens
-Marcus Johnson
-PROJECT TITLE: What The Text?!
-PROJECT DESCRIPTION:
+# PROJECT TITLE: What The Text?!
+
+# GROUP MEMBERS:
+* Leslie Rose
+* Tim Stevens
+* Marcus Johnson
+
+# PROJECT DESCRIPTION:
 * What The Text?! is an online community where users can come together and share their funniest, craziest, or most 'What The Text?!'-worthy conversations.
-SKETCH:
+
+# SKETCH:
 * To be added
-ROUGH BREAKDOWN OF TASKS:
+
+# ROUGH BREAKDOWN OF TASKS:
 * Screen capture text convos on phone and use upload button to send screenshots to server
 * Mobile responsive: Have app/site open and properly function in phone browser
 * Store screenshots in DB
