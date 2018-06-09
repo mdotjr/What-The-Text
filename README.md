@@ -9,7 +9,9 @@
 * What The Text?! is an online community where users can come together and share their funniest, craziest, or most 'What The Text?!'-worthy conversations.
 
 # SKETCH:
-* To be added
+![user home](https://user-images.githubusercontent.com/34491285/41194210-5f4262aa-6bdd-11e8-94cd-fb10af573d5e.png)
+![landing_login](https://user-images.githubusercontent.com/34491285/41194211-5f4e540c-6bdd-11e8-9158-1f4577199007.png)
+![comment on opt 2](https://user-images.githubusercontent.com/34491285/41194212-5f5feb18-6bdd-11e8-9cc2-2b67bdd6effe.png)
 
 # ROUGH BREAKDOWN OF TASKS:
 * Screen capture text convos on phone and use upload button to send screenshots to server
