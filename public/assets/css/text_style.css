@@ -1,0 +1,215 @@
+.wrapper {
+    margin: 0 auto;
+    width: 960px;
+    flex: 1;
+    padding-top: 20px;
+}
+
+nav {
+    height: 80px!important;
+    background-color: rgb(29, 146, 255)!important;
+}
+
+.left {
+    padding-left: 90px!important;
+}
+
+.nav-wrapper  li a, .nav-wrapper .logo {
+    padding:0 15px;
+    line-height:80px;    
+}
+
+.ewemoji, .lolemoji, .nsfwemoji, .failemoji {
+    height: 70px;
+    width: 65px;
+}
+
+.bffsemoji {
+    height: 75px;
+    width: 75px;
+}
+
+.wtfemoji {
+    height: 70px;
+    width: 80px; 
+}
+
+.fameemoji, .shameemoji {
+    width: 63px;
+    height: 70px;
+}
+
+.door {
+    width: 75px;
+    height: 70px;
+}
+
+.logo {
+    height: 70px;
+    margin-top: 5px;
+}
+
+.signin {
+    padding-top: 20px;
+}
+
+.signout-center {
+    padding-top: 15px;
+}
+
+.signinoptions {
+    padding: 20px 0 20px 0;
+}
+
+#hof {
+    margin-left: 50px;
+}
+
+.fbicon {
+    width: 15%;
+}
+
+.igicon {
+    width: 18%;
+}
+
+.twicon {
+    width: 16%;
+}
+
+.trending {
+    overflow-y: scroll;
+    height: 400px;
+}
+
+.welcomebox {
+    background-color: rgba(240, 228, 228, 0.651);
+    padding: 10px;
+}
+
+#rememberme {
+    margin-left: -20px!important;
+}
+
+.aboutsite h2 {
+    margin-top: -3px;
+}
+
+.trending {
+    background-color: rgb(247, 243, 243);
+    padding: 10px;
+}
+
+.textupload {
+    background-color: rgb(240, 240, 240);
+    height: 600px;
+}
+
+.textcategories {
+    padding: 10px 0 10px 0;
+}
+
+.textuploadsubmit {
+    margin: 5px 0 0 15px;
+}
+
+.textcategoriesdiv {
+    padding-top: 8px;
+}
+
+.textcategories {
+    letter-spacing: 1.8px;
+}
+
+#drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    width: 480px;
+    font-family: sans-serif;
+    padding: 20px;
+  }
+
+#drop-area.highlight {
+    border-color: purple;
+}
+
+p {
+    margin-top: 0;
+}
+
+.my-form {
+    margin-bottom: 10px;
+}
+
+#gallery {
+    margin-top: 10px;
+}
+
+#gallery img {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+  
+.button {
+    display: inline-block;
+    padding: 10px;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+  
+.button:hover {
+    background: #ddd;
+}
+  
+#fileElem {
+    display: none;
+}
+
+.everyonestextsdiv, .mytextsdiv {
+      background-color: rgb(224, 222, 222);
+      height: 600px;
+      margin-bottom: 20px;
+}
+
+.commentsarea {
+      height: 500px;
+}
+
+.commentsonlysdiv {
+      height: 300px;
+      overflow-y: scroll;
+}
+
+.ratingsonlysdiv {
+    height: 200px;
+}
+
+.captiononlydiv {
+    margin-top: 10px;
+}
+
+.specifictext {
+      height: 400px;
+      background-color: rgb(233, 231, 231);
+      padding: 5px;
+}
+
+.postedby {
+      padding: 0 0 10px 0;
+}
+
+.commentbutton {
+    margin-top: 10px;
+}
+
+.textsharing {
+    width: 40%;
+}
+
+.hofcategory {
+    text-align: center;
+}
