@@ -8,6 +8,8 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
@@ -110,7 +112,7 @@
 
     <div class="wrapper">
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 showmebox">
+            <div class="col s6 col m6 showmebox">
                 Show me:
                 <p>
                     <label>
@@ -126,21 +128,27 @@
                 </p>
             </div>
 
-            <div class="col-xs-6 col-sm-6 col-md-6 uploadfile">
+            <div class="col s6 col m6 uploadfile">
                 <div id="drop-area">
                     <form class="my-form">
-                        <p>Upload your screenshots by clicking UPLOAD, or by dragging and dropping </p>
+                        <p>Upload your screenshots using the button below, or by dragging and dropping </p>
                         <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
-                        <label class="button" for="fileElem">UPLOAD</label>
+                        <label class="button btn-floating btn-large light-blue lighten-2 waves-effect waves-green waves-ripple" for="fileElem">
+                            <i class="material-icons">add</i>
+                        </label>
+
                     </form>
                     <progress id="progress-bar" max=100 value=0></progress>
                     <div id="gallery"></div>
+                    <button class="btn waves-effect waves-light light-blue lighten-2 waves-green waves-ripple" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
                 </div>
             </div>
         </div>
         <hr>
         <div class="row">
-            <div class="col-xs-6 col-sm-12 col-md-12 everyonestexts">
+            <div class="col s6 col m12 everyonestexts">
                 <h2>Everyone's</h2>
                 <div class="everyonestextsdiv"></div>
             </div>
@@ -155,7 +163,7 @@
 
     <script type="text/javascript" src="assets/javascript/uploadfile.js"></script>
     <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
-	<script type="text/javascript" src="assets/javascript/materializejs.js"></script>
+    <script type="text/javascript" src="assets/javascript/materializejs.js"></script>
 </body>
 
 </html>

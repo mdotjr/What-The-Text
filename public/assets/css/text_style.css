@@ -4,11 +4,16 @@
     font-weight: normal;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;    
+}
+
 .wrapper {
     margin: 0 auto;
     width: 960px;
     flex: 1;
     padding-top: 20px;
+    font-family: 'Roboto', sans-serif;    
 }
 
 nav {
@@ -63,10 +68,6 @@ nav {
     padding-top: 15px;
 }
 
-.signinoptions {
-    padding: 20px 0 20px 0;
-}
-
 #hof {
     margin-left: 50px;
 }
@@ -89,12 +90,11 @@ nav {
 
 .trending {
     overflow-y: scroll;
-    height: 400px;
+    height: 395px;
 }
 
 div#wn { 
     position:relative; 
-    /* width:580px;  */
     height:300px; 
     overflow:auto;
 }
@@ -105,16 +105,43 @@ div#wn {
     height: 500px;
 }
 
+.jointext {
+    margin-top: 4px!important;
+    margin-bottom: -5px!important;
+}
+
 .signinform {
-    padding-top: 10px;
+    padding-top: 30px!important;
+    margin-left: -10px!important;
 }
 
 .loginbutton {
-    margin-top: 10px;
+    margin-top: -10px!important;
+    margin-bottom: 20px!important;
 }
 
 .socialholder {
     padding-top: 10px;
+}
+
+.signupbutton {
+    margin-bottom: 10px!important;
+}
+
+.signinoptionssignup {
+    margin-left: 10px;
+}
+
+.checkbox {
+    margin-top: -20px!important;
+}
+
+.emailform {
+    margin-top: 30px!important;
+}
+
+.usernameform, .passwordform, .repeatpassword {
+    margin-top: -10px!important;   
 }
 
 #rememberme {
