@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "wagner";
+    src: url("../img/fonts/Wagner Zip-Change.ttf");
+    font-weight: normal;
+}
+
 .wrapper {
     margin: 0 auto;
     width: 960px;
@@ -77,22 +83,47 @@ nav {
     width: 16%;
 }
 
+.trendingtitle {
+    font-family: "wagner";
+}
+
 .trending {
     overflow-y: scroll;
     height: 400px;
 }
 
+div#wn { 
+    position:relative; 
+    /* width:580px;  */
+    height:300px; 
+    overflow:auto;
+}
+
 .welcomebox {
     background-color: rgba(240, 228, 228, 0.651);
     padding: 10px;
+    height: 500px;
+}
+
+.signinform {
+    padding-top: 10px;
+}
+
+.loginbutton {
+    margin-top: 10px;
+}
+
+.socialholder {
+    padding-top: 10px;
 }
 
 #rememberme {
     margin-left: -20px!important;
 }
 
-.aboutsite h2 {
-    margin-top: -3px;
+.longlogo {
+    width: 60%;
+    margin-top: -70px;
 }
 
 .trending {
