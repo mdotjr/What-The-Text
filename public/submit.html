@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/text_style.css" type="text/css" />
+    <title>What The Text?!</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="index.html" class="brandtitle brand-logo">
+                <img class="logo" src="assets/img/logo.png">
+            </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="left hide-on-med-and-down">
+                <li>
+                    <a href="#">
+                        <img class="ewemoji" src="assets/img/emojis/ewemoji.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="bffsemoji" src="assets/img/emojis/bffs.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="lolemoji" src="assets/img/emojis/lolemoji.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="nsfwemoji" src="assets/img/emojis/nsfwemoji.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="failemoji" src="assets/img/emojis/failemoji.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="wtfemoji" src="assets/img/emojis/wtfemoji.png">
+                    </a>
+                </li>
+            </ul>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="#">
+                        <img class="fameemoji" src="assets/img/emojis/fameemoji2.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="shameemoji" src="assets/img/emojis/shameemoji2.png">
+                        </i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="door" src="assets/img/emojis/door.png">
+                        </i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <a href="#">EW</a>
+        </li>
+        <li>
+            <a href="#">BFFS</a>
+        </li>
+        <li>
+            <a href="#">LOL</a>
+        </li>
+        <li>
+            <a href="#">NSFW</a>
+        </li>
+        <li>
+            <a href="#">FAIL</a>
+        </li>
+        <li>
+            <a href="#">WTFam</a>
+        </li>
+        <li>
+            <a href="#">Hall Of Fame</a>
+        </li>
+        <li>
+            <a href="#">Hall Of Shame</i>
+            </a>
+        </li>
+        <li>
+            <a href="#">Sign Out</i>
+            </a>
+        </li>
+    </ul>
+
+    <div class="wrapper">
+        <div class="row">
+
+            <div class="col-xs-4 col-sm-4 col-sm-4 col-md-4 textcaption pull-left">
+                <textarea type="text" class="form-control" placeholder="Type your caption here" rows="3" cols="10"></textarea>
+
+            </div>
+
+            <div class="col-xs-8 col-sm-8 col-md-8 textupload pull-right">
+                Text screenshot goes here
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4 textcategoriesdiv pull-left">
+                Check the categories that best fit your text:
+                <div class="form-check textcategories">
+                    <p>
+                        <label>
+                            <input type="checkbox" class="ewcategory" />
+                            <span>EW</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" class="bffcategory" />
+                            <span>BFF</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" class="lolcategory" />
+                            <span>LOL</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" class="nsfwcategory" />
+                            <span>NSFW</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" class="failcategory" />
+                            <span>FAIL</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" class="wtfamcategory" />
+                            <span>WTFam</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 textsharing pull-left">
+                Sharing is caring!
+                <div class="socialholder">
+                    <img class="socialicons fbicon" src="assets/img/fb.png">
+                    <img class="socialicons igicon" src="assets/img/ig.png">
+                    <img class="socialicons twicon" src="assets/img/tw.png">
+                </div>
+            </div>
+            <button class="btn btn-primary pull-left textuploadsubmit" type="submit">Submit</button>
+
+        </div>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/materializenav.js"></script>
+</body>
+
+</html>
