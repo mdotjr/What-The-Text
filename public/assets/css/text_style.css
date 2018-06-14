@@ -11,43 +11,82 @@
     padding-top: 20px;
 }
 
-nav {
-    height: 80px!important;
-    background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
+nav ul li:hover {
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
 }
 
 .left {
     padding-left: 90px!important;
 }
 
-.nav-wrapper  li a, .nav-wrapper .logo {
-    padding:0 15px;
-    line-height: 80px;    
+nav {
+    height: 30px;
+    line-height: 30px;
+    background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    height: 30px;
+    line-height: 30px;
+}
+
+nav .button-collapse i {
+    height: 30px;
+    line-height: 30px;
+}
+
+nav .brand-logo { 
+    font-size: 1.6rem; 
+}
+
+@media only screen and (min-width: 601px){
+    nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+        height: 80px;
+        line-height: 30px;
+    }
 }
 
 .ewemoji, .lolemoji, .nsfwemoji, .failemoji {
-    height: 65px;
+    height: 60px;
     width: 65px;
+    margin-top: 10px;
+    margin-left: -5px;
 }
 
 .bffsemoji {
-    height: 75px;
-    width: 75px;
+    height: 61px;
+    width: 64px;
+    margin-top: 10px;
+    margin-left: -5px;
+}
+
+.yaasemoji, nopeemoji {
+    height: 65px;
+    width: 90px;
 }
 
 .wtfemoji {
-    height: 70px;
-    width: 80px; 
+    height: 60px;
+    width: 80px;
+    margin-top: 10px; 
 }
 
-.fameemoji, .shameemoji {
+.fameemoji {
     width: 63px;
-    height: 70px;
+    height: 64px;
+    margin-top: 8px;
+}
+
+.shameemoji {
+    width: 73px;
+    height: 64px;
+    margin-top: 8px;
 }
 
 .door {
     width: 75px;
-    height: 70px;
+    height: 64px;
+    margin-top: 7px;
 }
 
 .logo {
@@ -63,38 +102,34 @@ nav {
     padding-top: 15px;
 }
 
-.signinoptions {
-    padding: 20px 0 20px 0;
-}
-
 #hof {
     margin-left: 50px;
 }
 
-.fbicon {
+.fbicon, .igicon, .twicon {
     width: 15%;
 }
 
-.igicon {
-    width: 18%;
+.aboutsite {
+    margin-top: 18px;
 }
 
-.twicon {
-    width: 16%;
+.aboutsite p {
+    margin-top: -10px;
 }
 
-.trendingtitle {
+h2 {
     font-family: "wagner";
 }
 
 .trending {
     overflow-y: scroll;
-    height: 400px;
+    height: 395px;
+    margin-top: 10px;
 }
 
 div#wn { 
     position:relative; 
-    /* width:580px;  */
     height:300px; 
     overflow:auto;
 }
@@ -105,25 +140,84 @@ div#wn {
     height: 500px;
 }
 
+.jointext {
+    margin-top: 18px!important;
+    margin-bottom: -2px!important;
+}
+
 .signinform {
-    padding-top: 10px;
+    padding-top: 30px!important;
+    margin-left: -10px!important;
 }
 
 .loginbutton {
-    margin-top: 10px;
+    margin-top: -10px!important;
+    margin-bottom: 20px!important;
 }
 
 .socialholder {
     padding-top: 10px;
 }
 
+.signupbutton {
+    margin-top: -15px!important;
+    margin-bottom: 10px;
+}
+
+.signinoptionssignup {
+    margin-left: 20px;
+}
+
+.socialholdersignup {
+    margin: 10px 0 0 -10px;
+}
+
+ul.tabs {
+    width: 70%;
+}
+
+.tabs {
+    margin-left: -10px;
+}
+
+.tabs .indicator {
+    background-color:rgb(10, 233, 58)!important;
+  }
+
+.tabs a:hover {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.checkbox {
+    margin-top: -20px!important;
+}
+
+.checkbox-orange[type="checkbox"] + label:before{
+    border: 2px solid indigo;
+    background: transparent;
+}
+
+.emailform {
+    margin-top: 30px!important;
+}
+
+.usernameform, .passwordform, .repeatpassword {
+    margin-top: -18px!important;   
+}
+
 #rememberme {
-    margin-left: -20px!important;
+    margin-top: -500px!important;
+    margin-bottom: 30px!important;
 }
 
 .longlogo {
     width: 60%;
     margin-top: -70px;
+    margin-left: 2px;
 }
 
 .trending {
@@ -141,15 +235,19 @@ div#wn {
 }
 
 .textuploadsubmit {
-    margin: 5px 0 0 15px;
+    margin: 5px 0 0 90px!important;
 }
 
 .textcategoriesdiv {
-    padding-top: 8px;
+    padding-top: 10px!important;
 }
 
 .textcategories {
     letter-spacing: 1.8px;
+}
+
+.categorytext {
+    padding-right: 15px;
 }
 
 #drop-area {
@@ -159,6 +257,10 @@ div#wn {
     font-family: sans-serif;
     padding: 20px;
   }
+
+.addtext {
+    margin-top: 7px;
+}
 
 #drop-area.highlight {
     border-color: purple;
@@ -206,6 +308,31 @@ p {
       margin-bottom: 20px;
 }
 
+.uploadfile {
+    margin-top: 20px;
+}
+
+.showmebox {
+    padding-left: 20px!important;
+}
+
+.textfeedlogo {
+    width: 90%;
+    margin-top: 5px;
+    margin-left: 2px;
+}
+
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:before,
+[type="radio"].with-gap:checked + span:after {
+  border: 2px solid #23ccff;
+}
+ 
+[type="radio"]:checked + span:after,
+[type="radio"].with-gap:checked + span:after {
+  background-color: #23ccff;
+}
+
 .commentsarea {
       height: 500px;
 }
@@ -239,8 +366,55 @@ p {
 
 .textsharing {
     width: 40%;
+    margin-top: 2px;
 }
 
 .hofcategory {
     text-align: center;
+}
+
+.nsfwlong, .ewlong, .bfflong, .lollong, .faillong, .wtfamlong {
+    width: 80%;
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+.hoslong, .hoflong {
+    width: 60%;
+}
+
+@media (min-width:1170px) {
+    .tabwrapperdiv {
+        position: relative;
+    }
+
+    ul.tabs {
+        width: 70%;
+    }
+    
+    .tabwrapper {
+        position: absolute;
+        right: -30px;
+        top: -16px;
+    }
+}
+
+@media (min-width:1201px) {
+    .tabwrapperdiv {
+        position: relative;
+    }
+
+    ul.tabs {
+        width: 240%;
+    }
+    
+    .tabwrapper {
+        position: absolute;
+        right: -30px;
+        top: -16px;
+    }
+
+    .signupform {
+        margin-top: -12px;
+    }
 }
