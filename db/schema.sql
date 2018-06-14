@@ -24,9 +24,9 @@ CREATE TABLE `text_tbl` (
 	,`wtfam` BOOL DEFAULT 0
 	,`created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
 	,`updated_at` DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
-	,`ownerId` INT NOT NULL
+	,`userId` INT NOT NULL
 	,PRIMARY KEY (`id`)
-	,FOREIGN KEY (`ownerId`) REFERENCES `user_tbl` (`id`)
+	,FOREIGN KEY (`userId`) REFERENCES `user_tbl` (`id`)
 );
 
 CREATE TABLE `comment_tbl` (
@@ -36,15 +36,26 @@ CREATE TABLE `comment_tbl` (
 	,`updated_at` DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 	,PRIMARY KEY (`id`)
 	,`textId` INT NOT NULL
-	,`commentorId` INT NOT NULL
+	,`userId` INT NOT NULL
 	,FOREIGN KEY (`textId`) REFERENCES `text_tbl` (`id`)
-	,FOREIGN KEY (`commentorId`) REFERENCES `user_tbl` (`id`)
+	,FOREIGN KEY (`userId`) REFERENCES `user_tbl` (`id`)
 );
 
 CREATE TABLE `reaction_tbl` (
 	`id` INT AUTO_INCREMENT NOT NULL
-	`like` BOOL NOT NULL
+	,`like` BOOL NOT NULL
+	,`userId` INT NOT NULL
+	,`textId` INT NOT NULL
 	,PRIMARY KEY (`id`)
-	,FOREIGN KEY (`voter_id`) REFERENCES `user_tbl` (`id`)
-	,FOREIGN KEY (`text_id`) REFERENCES `text_tbl` (`id`)
+	,FOREIGN KEY (`userId`) REFERENCES `user_tbl` (`id`)
+	,FOREIGN KEY (`textId`) REFERENCES `text_tbl` (`id`)
+);
+
+CREATE TABLE `userReactText_tbl` (
+	`id` INT AUTO_INCREMENT NOT NULL
+	,`userId` INT NOT NULL
+	,`textId` INT NOT NULL
+	,PRIMARY KEY (`id`)
+	,FOREIGN KEY (`userId`) REFERENCES `user_tbl` (`id`)
+	,FOREIGN KEY (`textId`) REFERENCES `text_tbl` (`id`)
 );
