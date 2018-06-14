@@ -1,7 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
-    var User =  sequelize.define('User', {
+    const User =  sequelize.define('User', {
         id: {
             type: DataTypes.INTEGER,
+            primaryKey: true,
             allowNull: false,
             validate: { notEmpty: true }
         },username: {
@@ -20,9 +21,16 @@ module.exports = (sequelize, DataTypes) => {
     {
         freezeTableName: true,
         tableName: 'user_tbl',
-    }
-);
-    User.associate = function(models) {
-        User.hasMany(models.Comment, { foreignKey: { allowNull: false } })
-    }
+    });
+
+    User.associate = (models) => {
+        User.hasMany(models.Text, { foreignKey: 'userId', sourceKey: 'id' });
+        // hasMany association: foreign key (userId) stored on target model (Text)
+        User.hasMany(models.Comment, { foreignKey: 'userId', sourceKey: 'id' })
+        // hasMany association: foreign key(userId) stored on target model (Comment)
+    };
+    return User
 }
+
+
+// source.belongsTo(target)
