@@ -1,21 +1,23 @@
-$(document).ready(function() {
+// This file is being deprecated as we are creating separate logic file for each handlebars view
 
-    $(document).on("submit", "#new-signup", newUserSubmit);
+// $(document).ready(function() {
 
-    function newUserSubmit(event) {
-        event.preventDefault();
-        if (!($(".new-email").val()) || !($(".new-password").val())) {
-            return
-        }
-        newUser({
-            username: $(".new-email").val().trim(),
-            password: $(".new-password").val().trim()
-        })
-    };
+//     $(document).on("submit", "#new-signup", newUserSubmit);
 
-    function newUser(userData) {
-        $.post("/api/register", userData)
-        .then(console.log('hi'));
-    }
-});
+//     function newUserSubmit(event) {
+//         event.preventDefault();
+//         if (!($(".new-email").val()) || !($(".new-password").val())) {
+//             return
+//         }
+//         newUser({
+//             username: $(".new-email").val().trim(),
+//             password: $(".new-password").val().trim()
+//         })
+//     };
+
+//     function newUser(userData) {
+//         $.post("/api/register", userData)
+//         .then(console.log('hi'));
+//     }
+// });
   

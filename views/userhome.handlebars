@@ -99,9 +99,10 @@
         </div>
         <div class="col s6 col m6 uploadfile right">
             <div id="drop-area">
-                <form class="my-form">
+                <form class="my-form" method='post' enctype='multipart/form-data' action='upload'>
                     <p>Upload your screenshots using the button below, or by dragging and dropping </p>
-                    <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                    <input type="file" name='imgfile' id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                    <input type="submit" value="Submit">
                     <label class="button btn-floating btn-large light-blue lighten-2 waves-effect waves-green waves-ripple addtext" for="fileElem">
                         <i class="material-icons">add</i>
                     </label>
