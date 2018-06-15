@@ -17,17 +17,14 @@ var handleError = (error, response) => {
 };
 var upload = multer({ dest: "public/assets/uploads/" });
 
-router.post("/upload", upload.single("file"),(request, response, next) => {
-    var imgFile = request.file.originalname;
-    var tempPath = request.file.path;
-    // const targetPath = path.join(__dirname, "./uploads/", imgFile);
-    const targetPath = path.join("public/assets/uploads/", imgFile);
-    console.log(request.file);
-    var myExt = path.extname(request.file.originalname);
-    console.log(myExt);
+router.post("/upload", upload.single("file"), (request, response, next) => {
+    var extension = path.extname(request.file.originalname).toLowerCase();
+    var temporaryFile = request.file.path;
+    var newFile = path.join("public/assets/uploads/", request.file.filename + extension);
+
     // response.redirect('/userhome');
-    if (myExt.toLowerCase() === ".png") {
-        fs.rename(tempPath, targetPath + myExt, error => {
+    if (extension === ".png") {
+        fs.rename(temporaryFile, newFile, error => {
             if (error) return handleError(error, response);
             response.redirect('/userhome');
         })
