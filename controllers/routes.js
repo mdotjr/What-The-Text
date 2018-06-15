@@ -16,16 +16,32 @@
 
 //  logging out         app.put('/:userId/logout'   update user login data, logged_in = false
 
+// var path = require("path");
 
-const express = require('express')
-const router = express.Router()
+var express = require('express')
+var router = express.Router()
+
+var db = require("../models");
 
 // ////////////////////////////////////
 
 // ROUTES GO HERE
 router.get('/', function (request, response) {
-    response.send('What the text?! Home Page')
-  })
+    response.sendFile(__dirname, "../public/index.html");
+    
+})
+
+router.post('/api/register', (request, response) => {
+    console.log(request.body);
+    db.User.create(request.body).then((dbUser) => {
+        response.json(dbUser);
+    })
+})
+
+
+
+
+
 // read more at: https://expressjs.com/en/guide/routing.html#express-router
 // our middleware (body-parser) is defined in server.js
 

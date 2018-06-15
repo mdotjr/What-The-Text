@@ -1,3 +1,5 @@
+var db = require("../models")
+
 module.exports = (sequelize, DataTypes) => {
     const userReactText = sequelize.define('userReactText', {
         id: {
@@ -6,11 +8,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },userId: {
             type: DataTypes.INTEGER,
-            references: { model: User, key: 'id' },
+            references: { model: db.User, key: 'id' },
             allowNull: false
         },textId: {
             type: DataTypes.INTEGER,
-            references: { model: Text, key: 'id' },
+            references: { model: db.Text, key: 'id' },
             allowNull: false
         }
     })

@@ -1,5 +1,7 @@
+var db = require("../models")
+
 module.exports = (sequelize, DataTypes) => {
-    const Reaction =  sequelize.define('Reaction', {
+    var Reaction =  sequelize.define('Reaction', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -9,18 +11,19 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },textId: {
             type: DataTypes.INTEGER,
-            references: { model: Text, key: 'id' },
+            references: { model: db.Text, key: 'id' },
             allowNull: false
         },userId: {
             type: DataTypes.INTEGER,
-            references: { model: User, key: 'id' },
+            references: { model: db.User, key: 'id' },
             allowNull: false
         },
     },
     {
         freezeTableName: true,
         tableName: 'reaction_tbl',
-    });
+    }
+);
 
     return Reaction
 }
