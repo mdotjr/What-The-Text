@@ -1,11 +1,8 @@
+// var db = require("../models");
+
 module.exports = (sequelize, DataTypes) => {
-    const User =  sequelize.define('User', {
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            allowNull: false,
-            validate: { notEmpty: true }
-        },username: {
+    var User =  sequelize.define('User', {
+        username: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: { notEmpty: true }
@@ -15,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
             validate: { notEmpty: true }
         },logged_in: {
             type: DataTypes.BOOLEAN,
-            default: 0
+            default: true
         }
     },
     {
@@ -24,13 +21,9 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     User.associate = (models) => {
-        User.hasMany(models.Text, { foreignKey: 'userId', sourceKey: 'id' });
         // hasMany association: foreign key (userId) stored on target model (Text)
+        User.hasMany(models.Text, { foreignKey: 'userId', sourceKey: 'id' });
         User.hasMany(models.Comment, { foreignKey: 'userId', sourceKey: 'id' })
-        // hasMany association: foreign key(userId) stored on target model (Comment)
     };
     return User
 }
-
-
-// source.belongsTo(target)
