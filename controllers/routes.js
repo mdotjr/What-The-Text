@@ -16,13 +16,17 @@
 
 //  logging out         app.put('/:userId/logout'   update user login data, logged_in = false
 
+// var path = require("path");
 
-const express = require('express')
-const router = express.Router()
+var express = require('express')
+var router = express.Router()
+
+var db = require("../models");
 
 // ////////////////////////////////////
 
 // ROUTES GO HERE
+
 router.get('/index', function (request, response) {
   response.render('index')
 })

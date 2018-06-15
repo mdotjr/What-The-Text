@@ -4,7 +4,7 @@ INSERT INTO user_tbl (`username`, `password`) VALUES
 	('lrose', 'mylamepassword');
 
 INSERT INTO `text_tbl` (`image`,`caption`,`userId`) VALUES
-	('myblob','bla bla bla',1)
+	('myblob','bla bla bla',1),
 	('marcusblob','bla bla bla',2),
 	('leslieblob','bla bla bla',3);
 

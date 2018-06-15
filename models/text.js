@@ -1,10 +1,8 @@
+var db = require("../models");
+
 module.exports = (sequelize, DataTypes) => {
-    const Text =  sequelize.define('Text', {
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            allowNull: false,
-        },image: {
+    var Text =  sequelize.define('Text', {
+        image: {
             type: DataTypes.BLOB,
             allowNull: false,
             validate: { notEmpty: true }
@@ -32,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
             default: 0
         },userId: {
             type: DataTypes.INTEGER,
-            references: { model: User, key: 'id' },
+            references: { model: db.User, key: 'id' },
             allowNull: false
         },
     },
