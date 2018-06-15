@@ -23,10 +23,16 @@ router.post("/upload", upload.single("file"),(request, response, next) => {
     // const targetPath = path.join(__dirname, "./uploads/", imgFile);
     const targetPath = path.join("public/assets/uploads/", imgFile);
     console.log(request.file);
-    response.redirect('/userhome');
-    // if (path.extname(request.file.originalname).toLowerCase() === ".png") {
-    //     fs.rename(tempPath, targetPath, error => {
-    //         if (error) return handleError(error, response);
+    var myExt = path.extname(request.file.originalname);
+    console.log(myExt);
+    // response.redirect('/userhome');
+    if (myExt.toLowerCase() === ".png") {
+        fs.rename(tempPath, targetPath + myExt, error => {
+            if (error) return handleError(error, response);
+            response.redirect('/userhome');
+        })
+    }
+
     //             response
     //             .status(200)
     //             .contentType("text/plain")
