@@ -19,12 +19,6 @@ app.use(indexRoutes);
 var userhomeRoutes = require('./controllers/userhome-routes.js');
 app.use(userhomeRoutes);
 
-// var submitRoutes = require('./controllers/submit-routes.js');
-// app.use(submitRoutes);
-
-// require("./controllers/index-routes.js")(app);
-// require("./controllers/userhome-routes.js")(app);
-
 app.listen(PORT, () => {
     console.log("App listening on http://localhost:" + PORT)
 })
