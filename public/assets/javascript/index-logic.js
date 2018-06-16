@@ -16,6 +16,6 @@ $(document).ready(function() {
 
     function newUser(userData) {
         $.post("/api/register", userData)
-        .then(console.log('hi'));
+        .then(console.log('this sucks'));
     }
 });

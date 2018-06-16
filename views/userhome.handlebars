@@ -99,7 +99,7 @@
         </div>
         <div class="col s6 col m6 uploadfile right">
             <div id="drop-area">
-                <form class="my-form" method='post' enctype='multipart/form-data' action='/upload'>
+                <form method='post' class="my-form" enctype='multipart/form-data' action='/upload' >
                     <p>Upload your screenshots using the button below, or by dragging and dropping </p>
                     <input type="file" name='file' id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
                     <label class="button btn-floating btn-large light-blue lighten-2 waves-effect waves-green waves-ripple addtext" for="fileElem">
@@ -146,3 +146,4 @@
 <script type="text/javascript" src="assets/javascript/uploadfile.js"></script>
 <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
 <script type="text/javascript" src="assets/javascript/materializejs.js"></script>
+{{!-- <script type="text/javascript" src="assets/javascript/userhome-logic.js"></script> --}}

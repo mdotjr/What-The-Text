@@ -8,57 +8,36 @@ router.get('/userhome', function (request, response) {
     response.render('userhome')
 });
 
+router.get('/submit', function (request, response) {
+    response.render('submit')
+});
+
+router.post('/submit', function (request, response) {
+    response.render('submit')
+});
+
 var multer = require("multer");
 var handleError = (error, response) => {
     response
     .status(500)
     .contentType("text/plain")
-    .end("Oops! Something went wrong!");
+    .end("Something went terribly wrong...");
 };
 var upload = multer({ dest: "public/assets/uploads/" });
 
-router.post("/upload", upload.single("file"),(request, response, next) => {
-    var imgFile = request.file.originalname;
-    var tempPath = request.file.path;
-    // const targetPath = path.join(__dirname, "./uploads/", imgFile);
-    const targetPath = path.join("public/assets/uploads/", imgFile);
-    console.log(request.file);
-    var myExt = path.extname(request.file.originalname);
-    console.log(myExt);
-    // response.redirect('/userhome');
-    if (myExt.toLowerCase() === ".png") {
-        fs.rename(tempPath, targetPath + myExt, error => {
+router.post("/upload", upload.single("file"), (request, response, next) => {
+    var extension = path.extname(request.file.originalname).toLowerCase();
+    var tempFilePath = request.file.path;
+    var newFilePath = path.join("public/assets/uploads/", request.file.filename + extension);
+    console.log(newFilePath);
+
+    if (extension === ".png") {
+        fs.rename(tempFilePath, newFilePath, error => {
             if (error) return handleError(error, response);
-            response.redirect('/userhome');
+            response.redirect('/submit')
+                    
         })
     }
-
-    //             response
-    //             .status(200)
-    //             .contentType("text/plain")
-    //             .end(function() {
-    //                 send("File uploaded successfully");
-    //             });
-    //     })
-    // }
-    
-            // } else {
-            //     fs.unlink(tempPath, err => {
-            //         if (error) return handleError(error, response);
-            //         response
-            //         .status(403)
-            //         .contentType("text/plain")
-            //         .end("Only .png files are allowed!")
-            //     })
-            // }
-        // })
-    // }
 });
 
-
 module.exports = router;
-
-    // console.log(targetPath);  // /Users/tim/Coding/Repos/What-The-Text/controllers/uploads/text_img1.png
-    // console.log(__dirname);   // /Users/tim/Coding/Repos/What-The-Text/controllers
-    // console.log(request.file.originalname);  // text_img1.png
-
