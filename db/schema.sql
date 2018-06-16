@@ -14,8 +14,8 @@ CREATE TABLE `user_tbl` (
 
 CREATE TABLE `text_tbl` (
 	`id` INT AUTO_INCREMENT NOT NULL
-	,`image` BLOB NOT NULL
-	,`caption` VARCHAR(255) NOT NULL
+	,`image` VARCHAR(255) NOT NULL
+	,`caption` VARCHAR(255)
 	,`ew` BOOL DEFAULT 0
 	,`bff` BOOL DEFAULT 0
 	,`lol` BOOL DEFAULT 0

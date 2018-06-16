@@ -99,19 +99,18 @@
         </div>
         <div class="col s6 col m6 uploadfile right">
             <div id="drop-area">
-                <form class="my-form">
+                <form method='post' class="my-form" enctype='multipart/form-data' action='/upload' >
                     <p>Upload your screenshots using the button below, or by dragging and dropping </p>
-                    <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                    <input type="file" name='file' id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
                     <label class="button btn-floating btn-large light-blue lighten-2 waves-effect waves-green waves-ripple addtext" for="fileElem">
                         <i class="material-icons">add</i>
                     </label>
-
+                    <button class="btn waves-effect waves-light light-blue lighten-2 waves-green waves-ripple" type="submit" name="action">Submit
+                        <i class="material-icons right">file_upload</i>
+                    </button>
                 </form>
                 <progress id="progress-bar" max=100 value=0></progress>
                 <div id="gallery"></div>
-                <button class="btn waves-effect waves-light light-blue lighten-2 waves-green waves-ripple" type="submit" name="action">Submit
-                    <i class="material-icons right">file_upload</i>
-                </button>
             </div>
         </div>
         <div class="col s6 col m6 showmebox left">
@@ -147,3 +146,4 @@
 <script type="text/javascript" src="assets/javascript/uploadfile.js"></script>
 <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
 <script type="text/javascript" src="assets/javascript/materializejs.js"></script>
+{{!-- <script type="text/javascript" src="assets/javascript/userhome-logic.js"></script> --}}

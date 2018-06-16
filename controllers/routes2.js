@@ -27,9 +27,10 @@ var db = require("../models");
 
 // ROUTES GO HERE
 
-router.get('/index', function (request, response) {
-  response.render('index')
-})
+/////// moved this route into controllers/index-routes.js
+// router.get('/index', function (request, response) {
+//   response.render('index')
+// })  
 
 router.get('/bff', function (request, response) {
   response.render('bff')

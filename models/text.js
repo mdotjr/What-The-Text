@@ -3,12 +3,12 @@ var db = require("../models");
 module.exports = (sequelize, DataTypes) => {
     var Text =  sequelize.define('Text', {
         image: {
-            type: DataTypes.BLOB,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: { notEmpty: true }
         },caption: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             validate: { notEmpty: true }
         },ew: {
             type: DataTypes.BOOLEAN,
