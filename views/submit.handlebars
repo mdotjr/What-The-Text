@@ -94,9 +94,9 @@
 
 <div class="wrapper">
     <div class="row">
-        <form id="updatetextform" method="post" action="/updatetext">
+        <form id="updatetextform" method="post" enctype='multipart/form-data' action="/api/update" >
             <div class="col s4 col m4 textcaption left">
-                <textarea type="text" class="form-control" placeholder="Type your caption here" rows="3" cols="10"></textarea>
+                <textarea id='caption' type="text" class="form-control" placeholder="Type your caption here" rows="3" cols="10"></textarea>
             </div>
 
             <div class="col col s8 col m8 textupload right">Text screenshot goes here</div>
@@ -105,27 +105,27 @@
                 <div class="form-check textcategories">
                     <p>
                         <label>
-                            <input type="checkbox" class="ewcategory" />
+                            <input type="checkbox" class="ewcategory" name='ew' id="ew"/>
                             <span class="categorytext">EW</span>
                         </label>
                         <label>
-                            <input type="checkbox" class="bffcategory" />
+                            <input type="checkbox" class="bffcategory" name='bff' id="bff"/>
                             <span class="categorytext">BFF</span>
                         </label>
                         <label>
-                            <input type="checkbox" class="lolcategory" />
+                            <input type="checkbox" class="lolcategory" name='lol' id="lol"/>
                             <span class="categorytext">LOL</span>
                         </label>
                         <label>
-                            <input type="checkbox" class="nsfwcategory" />
+                            <input type="checkbox" class="nsfwcategory" name='nsfw' id="nsfw"/>
                             <span class="categorytext">NSFW</span>
                         </label>
                         <label>
-                            <input type="checkbox" class="failcategory" />
+                            <input type="checkbox" class="failcategory" name='fail' id="fail"/>
                             <span class="categorytext">FAIL</span>
                         </label>
                         <label>
-                            <input type="checkbox" class="wtfamcategory" />
+                            <input type="checkbox" class="wtfamcategory" name='wtfam' id="wtfam"/>
                             <span class="categorytext">WTFam</span>
                         </label>
                     </p>
@@ -147,53 +147,44 @@
 
 <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
 <script type="text/javascript" src="assets/javascript/materializejs.js"></script>
+
 <script>
     $(document).ready(function() {
+
         var textId = window.location.pathname.split("/").pop()
         $.get('/api/text/'+textId)
         .then(function(response) {
-            console.log(response);
+            console.log("response.id on page load: " + response.id)
             var imageElem = $('<img src="'+response.image+'">')
             $('.textupload').html(imageElem);
-        });
+       });
 
-/////////////////  WHAT I'M WORKING ON  /////////////////////////////////////////////
-        $(document).on("submit", "#updatetextform", updateText)
-        function updateText(event) {
 
-        $.post('/api/text/'+textId)
-        .then(function(response) {
-            console.log(response);
-        });
+        $(document).on("submit", "#updatetextform", updateTextSubmit);
 
-        function updateText() {
-            $.get('/userhome')
+        function updateTextSubmit(event) {
+            event.preventDefault();
+            var textId = window.location.pathname.split("/").pop();
+            console.log('textId: ' + textId);
+
+            updatedText({
+                id: 36,
+                caption: "bla bla bla", //$("#caption").val(),
+                ew: 1, // $('#ew').val(),
+                bff: 1, // $('#bff').val(),
+                lol: 1, // $('#lol').val(),
+                nsfw: 1, // $('#nsfw').val(),
+                fail: 1, // $('#fail').val(),
+                wtfam: 1, // $('#wtfam').val(),
+                userId: 20
+            })
+        }
+
+        function updatedText(textData) {
+            console.log(textData);
+            $.post('/api/update/'+textId, textData)
+            .then(console.log("working?"));
         };
-
-
-////////////////  SAMPLE  ///////////////////////////////////////////////////////////
-            $(document).on("submit", ".signupform", newUserSubmit);
-            function newUserSubmit(event) {
-                event.preventDefault();
-                console.log('yes');
-                if (!($(".new-email").val()) || !($(".new-password").val())) {
-                    return
-                    }
-                newUser({
-                username: $(".new-email").val().trim(),
-                password: $(".new-password").val().trim()
-                })
-            };
-
-            function newUser(userData) {
-                $.post("/register", userData)
-                .then(console.log('this sucks'));
-            });
-///////////////////////////////////////////////////////////////////////////////////
-
-
-
-
 
     })
 </script>

@@ -23,26 +23,17 @@ app.get('/api/text/:id', function(request, response) {
         console.log(result);
         response.json(result);
     })
-})
+});
 
-// app.put("/api/posts", function(req, res) {
-//     db.Post.update(
-//       req.body,
-//       {
-//         where: {
-//           id: req.body.id
-//         }
-//       }).then(function(dbPost) {
-//       res.json(dbPost);
-//     });
-//   });
+// app.get('/updatetext',function (request, response) {
+//     response.render('submit')
 
-app.put('/api/text/:id', function(request, response) {
+app.get('/api/update/:id', function(request, response) {
     var textId = request.params.id;
     db.Text.update(request.body,
     {
         where: {
-            id: textId
+            id: request.params.id
         }
     })
     .then(function(dbText) {
@@ -53,6 +44,7 @@ app.put('/api/text/:id', function(request, response) {
 app.post('/submit', function (request, response) {
     response.render('submit')
 });
+
 
 var multer = require("multer");
 var handleError = (error, response) => {
