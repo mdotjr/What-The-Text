@@ -1,7 +1,5 @@
 // $(document).ready(function() {
 
-//     $(document).on("submit", ".signupform", newUserSubmit);
-
 //     function newUserSubmit(event) {
 //         event.preventDefault();
 //         console.log('yes');
