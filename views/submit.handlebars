@@ -94,7 +94,8 @@
 
 <div class="wrapper">
     <div class="row">
-        <form id="updatetextform" method="post" enctype='multipart/form-data' action="/api/update" >
+        <form id="updatetextform">
+{{!-- method="put" enctype='multipart/form-data' action="/api/text/bla" --}}
             <div class="col s4 col m4 textcaption left">
                 <textarea id='caption' type="text" class="form-control" placeholder="Type your caption here" rows="3" cols="10"></textarea>
             </div>
@@ -105,27 +106,27 @@
                 <div class="form-check textcategories">
                     <p>
                         <label>
-                            <input type="checkbox" class="ewcategory" name='ew' id="ew"/>
+                            <input type="checkbox" class="ewcategory checkBoxCat" name='category' id="ew"/>
                             <span class="categorytext">EW</span>
                         </label>
                         <label>
-                            <input type="checkbox" class="bffcategory" name='bff' id="bff"/>
+                            <input type="checkbox" class="bffcategory checkBoxCat" name='category' id="bff"/>
                             <span class="categorytext">BFF</span>
                         </label>
                         <label>
-                            <input type="checkbox" class="lolcategory" name='lol' id="lol"/>
+                            <input type="checkbox" class="lolcategory checkBoxCat" name='category' id="lol"/>
                             <span class="categorytext">LOL</span>
                         </label>
                         <label>
-                            <input type="checkbox" class="nsfwcategory" name='nsfw' id="nsfw"/>
+                            <input type="checkbox" class="nsfwcategory checkBoxCat" name='category' id="nsfw"/>
                             <span class="categorytext">NSFW</span>
                         </label>
                         <label>
-                            <input type="checkbox" class="failcategory" name='fail' id="fail"/>
+                            <input type="checkbox" class="failcategory checkBoxCat" name='category' id="fail"/>
                             <span class="categorytext">FAIL</span>
                         </label>
                         <label>
-                            <input type="checkbox" class="wtfamcategory" name='wtfam' id="wtfam"/>
+                            <input type="checkbox" class="wtfamcategory checkBoxCat" name='category' id="wtfam"/>
                             <span class="categorytext">WTFam</span>
                         </label>
                     </p>
@@ -150,7 +151,7 @@
 
 <script>
     $(document).ready(function() {
-
+        
         var textId = window.location.pathname.split("/").pop()
         $.get('/api/text/'+textId)
         .then(function(response) {
@@ -159,32 +160,35 @@
             $('.textupload').html(imageElem);
        });
 
+        $("#updatetextform").on("submit", function(event) {
+            event.preventDefault();          
 
-        $(document).on("submit", "#updatetextform", updateTextSubmit);
-
-        function updateTextSubmit(event) {
-            event.preventDefault();
+            if ($('#ew').prop('checked')) { var ewV = 1 } else { var ewV = 0};
+            if ($('#bff').prop('checked')) { var bffV = 1 } else { var bffV = 0};
+            if ($('#lol').prop('checked')) { var lolV = 1 } else { var lolV = 0};
+            if ($('#nsfw').prop('checked')) { var nsfwV = 1 } else { var nsfwV = 0};
+            if ($('#fail').prop('checked')) { var failV = 1 } else { var failV = 0};
+            if ($('#wtfam').prop('checked')) { var wtfamV = 1 } else { var wtfamV = 0};
+            
             var textId = window.location.pathname.split("/").pop();
             console.log('textId: ' + textId);
-
-            updatedText({
-                id: 36,
-                caption: "bla bla bla", //$("#caption").val(),
-                ew: 1, // $('#ew').val(),
-                bff: 1, // $('#bff').val(),
-                lol: 1, // $('#lol').val(),
-                nsfw: 1, // $('#nsfw').val(),
-                fail: 1, // $('#fail').val(),
-                wtfam: 1, // $('#wtfam').val(),
-                userId: 20
+            
+            var updatedText = {
+                caption: $("#caption").val(),
+                ew: ewV,
+                bff: bffV,
+                lol: lolV,
+                nsfw: nsfwV,
+                fail: failV,
+                wtfam: wtfamV,
+            }
+            console.log(updatedText);
+            $.ajax('/api/text/'+textId, {
+                type: "PUT",
+                data: updatedText
             })
-        }
-
-        function updatedText(textData) {
-            console.log(textData);
-            $.post('/api/update/'+textId, textData)
-            .then(console.log("working?"));
-        };
+            .then(console.log('hi'));
+        })
 
     })
 </script>

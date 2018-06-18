@@ -25,20 +25,17 @@ app.get('/api/text/:id', function(request, response) {
     })
 });
 
-// app.get('/updatetext',function (request, response) {
-//     response.render('submit')
-
-app.get('/api/update/:id', function(request, response) {
+app.put('/api/text/:id', function(request, response) {
     var textId = request.params.id;
     db.Text.update(request.body,
-    {
-        where: {
+    {   where: {
             id: request.params.id
         }
     })
     .then(function(dbText) {
         response.json(dbText);
     })
+    
 });
 
 app.post('/submit', function (request, response) {
