@@ -24,3 +24,4 @@
 * Texts can be categorized into various categories like: LOL, WTFam, Hall Of Shame, Hall Of Fame, OMG, NSFW, FAIL, <3
 * Possible ranking system of users based on their texts' rankings
 * Social media sharing capabilities/authentication
+testing
