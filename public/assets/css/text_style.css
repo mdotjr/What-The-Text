@@ -304,7 +304,7 @@ p {
 
 .everyonestextsdiv, .mytextsdiv {
       background-color: rgb(224, 222, 222);
-      height: 600px;
+      width: 50%;
       margin-bottom: 20px;
 }
 

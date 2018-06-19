@@ -99,7 +99,7 @@
         </div>
         <div class="col s6 col m6 uploadfile right">
             <div id="drop-area">
-                <form method='post' class="my-form" enctype='multipart/form-data' action='/upload' >
+                <form method='post' class="my-form" enctype='multipart/form-data' action='/upload'>
                     <p>Upload your screenshots using the button below, or by dragging and dropping </p>
                     <input type="file" name='file' id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
                     <label class="button btn-floating btn-large light-blue lighten-2 waves-effect waves-green waves-ripple addtext" for="fileElem">
@@ -134,6 +134,7 @@
     <hr>
     <div class="col s6 col m12 everyonestexts">
         <h2>Everyone's</h2>
+        <h5>Click each text to view comments and ratings - or leave your own!</h5>
         <div class="everyonestextsdiv"></div>
     </div>
     <!-- <div class="col-xs-6 col-sm-6 col-md-6 mytexts">
@@ -146,3 +147,16 @@
 <script type="text/javascript" src="assets/javascript/uploadfile.js"></script>
 <script type="text/javascript" src="assets/javascript/materialize.min.js"></script>
 <script type="text/javascript" src="assets/javascript/materializejs.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $.get('/api/userhome')
+            .then((response) => {
+                for (var i = 0; i < response.length; i++) {
+                    var imageElem = $('<a data-textId='+response[i].id+' href="/textfocus/'+response[i].id+'"><img src="' + response[i].image + '"></a>');
+                    $('.everyonestextsdiv').prepend(imageElem);
+                }
+            })
+    });
+</script>

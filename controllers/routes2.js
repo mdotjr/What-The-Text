@@ -68,9 +68,9 @@ router.get('/nsfw', function (request, response) {
   response.render('nsfw')
 })
 
-router.get('/submit', function (request, response) {
-  response.render('submit')
-})
+// router.get('/submit', function (request, response) {
+//   response.render('submit')
+// })
 
 router.get('/wtfam', function (request, response) {
   response.render('wtfam')
