@@ -17,14 +17,42 @@ var router = function (app) {
         response.render('userhome')
     });
 
-    app.get('/api/textfocus/:id', function (request, response) {
+
+
+
+
+
+
+
+
+
+    // findById(textId, { include: [db.Comment] })
+
+
+
+
+    app.get('/api/textfocusget/:id', function (request, response) {
         var textId = request.params.id;
-        db.Text.findById(textId)
+        db.Text.findById(textId, {
+            include: [db.Comment]
+        })
             .then(function (result) {
                 console.log(result);
                 response.json(result);
             });
     });
+
+
+
+
+
+
+
+
+
+
+
+
 
     app.get('/textfocus/:id', function (request, response) {
         response.render('comment')

@@ -1,6 +1,34 @@
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=388344565010558&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    window.twttr = (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function (f) {
+            t._e.push(f);
+        };
+
+        return t;
+    }(document, "script", "twitter-wjs"));
+
+</script>
+
 <nav>
     <div class="nav-wrapper">
-        <a href="index.html" class="brandtitle brand-logo">
+        <a href="/" class="brandtitle brand-logo">
             <img class="logo" src="assets/img/logo.png">
         </a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger">
@@ -8,52 +36,51 @@
         </a>
         <ul class="left hide-on-med-and-down">
             <li>
-                <a href="#">
+                <a href="/ew">
                     <img class="ewemoji" src="assets/img/emojis/ewemoji.png">
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <img class="bffsemoji" src="assets/img/emojis/bffs.png">
+                <a href="/bff">
+                    <img class="bffsemoji" src="assets/img/emojis/bff.png">
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/lol">
                     <img class="lolemoji" src="assets/img/emojis/lolemoji.png">
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/nsfw">
                     <img class="nsfwemoji" src="assets/img/emojis/nsfwemoji.png">
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/fail">
                     <img class="failemoji" src="assets/img/emojis/failemoji.png">
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/wtfam">
                     <img class="wtfemoji" src="assets/img/emojis/wtfemoji.png">
                 </a>
             </li>
         </ul>
         <ul class="right hide-on-med-and-down">
             <li>
-                <a href="#">
+                <a href="/halloffame">
                     <img class="fameemoji" src="assets/img/emojis/fameemoji2.png">
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/hallofshame">
                     <img class="shameemoji" src="assets/img/emojis/shameemoji2.png">
                     </i>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img class="door" src="assets/img/emojis/door.png">
-                    </i>
+                    <img class="door modal-trigger" data-target="modalsignout" src="assets/img/emojis/door.png">
                 </a>
             </li>
         </ul>
@@ -62,39 +89,65 @@
 
 <ul class="sidenav" id="mobile-demo">
     <li>
-        <a href="#">EW</a>
+        <a href="/ew">EW</a>
     </li>
     <li>
-        <a href="#">BFF</a>
+        <a href="/bff">BFFS</a>
     </li>
     <li>
-        <a href="#">LOL</a>
+        <a href="/lol">LOL</a>
     </li>
     <li>
-        <a href="#">NSFW</a>
+        <a href="/nsfw">NSFW</a>
     </li>
     <li>
-        <a href="#">FAIL</a>
+        <a href="/fail">FAIL</a>
     </li>
     <li>
-        <a href="#">WTFam</a>
+        <a href="/wtfam">WTFam</a>
     </li>
     <li>
-        <a href="#">Hall Of Fame</a>
+        <a href="/halloffame">Hall Of Fame</a>
     </li>
     <li>
-        <a href="#">Hall Of Shame</i>
+        <a href="/hallofshame">Hall Of Shame</i>
         </a>
     </li>
     <li>
-        <a href="#">Sign Out</i>
+        <a class="modal-trigger" data-target="modalsignout" href="#modalsignout">Sign Out</i>
         </a>
     </li>
 </ul>
 
 <div class="wrapper">
     <div class="row">
-        <div class="col s5 col m5 commentsarea">
+        <div class="col col s12 col m7 clickedtextarea">
+            <div class="postedby">
+                posted by
+                <span id="namepost">samplename</span> on
+                <span id="datepost">sampledate</span>.
+            </div>
+            {{!-- screenshot goes below --}}
+            <div class="specifictext card">
+            </div>
+
+            <div class="textsharing">
+                Sharing is caring!
+
+                <div class="socialholder">
+                    <div class="fb-share-button" data-href="https://rose-eat-da-burger.herokuapp.com" data-layout="button" data-size="small"
+                        data-mobile-iframe="true">
+                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frose-eat-da-burger.herokuapp.com%2F&amp;src=sdkpreparse"
+                            class="fb-xfbml-parse-ignore">Share</a>
+                    </div>
+                    <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=WHA%20THE%20TEXT%20is%20this?!">
+                        <img class="socialicons twicon" src="assets/img/tw.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m5 commentsarea">
             <div class="commentsonlysdiv">
                 <div class="comments">
                     Sample comment
@@ -112,67 +165,71 @@
 
             <form id="commentform">
                 <div class="captiononlydiv">
-                    <textarea id='commentTxtArea' class="form-control" placeholder="Say something about it..." rows="3" cols="10"></textarea>
-                    <button class="btn waves-effect waves-light light-blue lighten-2 waves-green waves-ripple commentbutton" type="submit">Comment</button>
+                    <textarea id='commentTxtArea' type="text" class="form-control" placeholder="Say something about it..." rows="3" cols="10"></textarea>
+                    <button class="btn waves-effect waves-light light-blue lighten-2 waves-green waves-ripple commentbutton modal-trigger" data-target="modalcomment"
+                        type="submit">Comment</button>
                 </div>
             </form>
-            
-        </div>
 
-        <div class="col col s7 col m7 clickedtextarea">
-            <div class="postedby">
-                posted by
-                <span id="namepost">samplename</span> on
-                <span id="datepost">sampledate</span>.
-            </div>
-            <div class="specifictext">
-                Specific text screenshot goes in this div
-            </div>
-            <div class="textsharing">
-                Sharing is caring!
-                <div class="socialholder">
-                    <img class="socialicons fbicon" src="assets/img/fb.png">
-                    <img class="socialicons igicon" src="assets/img/ig.png">
-                    <img class="socialicons twicon" src="assets/img/tw.png">
+            <div id="modalcomment" class="modal modal-close">
+                <div class="modal-content">
+                    <h4>Thx for ur epic comment! 😄</h4>
                 </div>
             </div>
+
+            <div id="modalsignout" class="modal modal-close">
+                <div class="modal-content">
+                    <h4>Bye, foo-licia! 👋</h4>
+                </div>
+            </div>
+
         </div>
+
         <script type="text/javascript" src="assets/javascript/materializejs.js"></script>
 
         <script>
             $(document).ready(function () {
-
                 var textId = window.location.pathname.split("/").pop()
-                $.get('/api/textfocus/' + textId)
+                $.get('/api/textfocusget/' + textId)
                     .then(function (response) {
                         console.log("response.id on page load: " + response.id)
                         var imageElem = $('<img src="' + response.image + '">')
                         $('.specifictext').html(imageElem);
                     });
-
                 $("#commentform").on("submit", function (event) {
                     event.preventDefault();
 
-                    var comment = { 
+                    test();
+
+                    var comment = {
                         comment: $('#commentTxtArea').val(),
                         userId: 20,
                         textId: textId
                     };
-
                     $.ajax('/text/comments/create', {
                         type: 'POST',
                         data: comment
                     })
-                    .then((response) => {
-                        var comment = response.comment;
-                        $('.comments').append(comment);
-                        $.get('/text/comments')
-                        .then(function (response) {
-                        console.log("Comment response:" + response)
-                    });
-                    })
+                        .then((response) => {
+                            var comment = response.comment;
+                            $('.comments').append(comment);
+                            $.get('/text/comments')
+                                .then(function (response) {
+                                    console.log("Comment response:" + response)
+                                });
+                        })
                 })
 
-                
+
+                function test() {
+                    $('.modal').modal({
+                        onOpenEnd: function () {
+                            setTimeout(function () {
+                                window.location.href = '/userhome';
+                            }, 1000);
+                        }
+                    });
+                }
+
             })
         </script>
