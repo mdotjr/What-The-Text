@@ -25,8 +25,8 @@ app.use(express.static("public"));
 require('./controllers/index-routes.js')(app,passport);
 // app.use(indexRoutes);
 
-var routes2 = require('./controllers/routes2.js');
-app.use(routes2);
+// var routes2 = require('./controllers/routes2.js');
+// app.use(routes2);
 
 // var userhomeRoutes = 
 require('./controllers/userhome-routes.js')(app);

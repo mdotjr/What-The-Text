@@ -17,18 +17,114 @@ var router = function (app) {
         response.render('userhome')
     });
 
+    
+    app.get('/api/lol', function (request, response) {
+        db.Text.findAll(
+            {
+                where: {
+                    lol: 1
+                }
+            })
+            .then(function (result) {
+                console.log(response);
+                response.json(result);
+            });
+    });
 
+    app.get('/api/wtfam', function (request, response) {
+        db.Text.findAll(
+            {
+                where: {
+                    wtfam: 1
+                }
+            })
+            .then(function (result) {
+                console.log(response);
+                response.json(result);
+            });
+    });
 
+    app.get('/api/ew', function (request, response) {
+        db.Text.findAll(
+            {
+                where: {
+                    ew: 1
+                }
+            })
+            .then(function (result) {
+                console.log(response);
+                response.json(result);
+            });
+    });
 
+    app.get('/api/bff', function (request, response) {
+        db.Text.findAll(
+            {
+                where: {
+                    bff: 1
+                }
+            })
+            .then(function (result) {
+                console.log(response);
+                response.json(result);
+            });
+    });
 
+    app.get('/api/lol', function (request, response) {
+        db.Text.findAll(
+            {
+                where: {
+                    lol: 1
+                }
+            })
+            .then(function (result) {
+                console.log(response);
+                response.json(result);
+            });
+    });
 
+    app.get('/api/nsfw', function (request, response) {
+        db.Text.findAll(
+            {
+                where: {
+                    nsfw: 1
+                }
+            })
+            .then(function (result) {
+                console.log(response);
+                response.json(result);
+            });
+    });
 
+    app.get('/api/fail', function (request, response) {
+        db.Text.findAll(
+            {
+                where: {
+                    fail: 1
+                }
+            })
+            .then(function (result) {
+                console.log(response);
+                response.json(result);
+            });
+    });
+
+    app.get('/api/fail', function (request, response) {
+        db.Text.findAll(
+            {
+                where: {
+                    fail: 1
+                }
+            })
+            .then(function (result) {
+                console.log(response);
+                response.json(result);
+            });
+    });
 
 
 
     // findById(textId, { include: [db.Comment] })
-
-
 
 
     app.get('/api/textfocusget/:id', function (request, response) {
@@ -41,17 +137,6 @@ var router = function (app) {
                 response.json(result);
             });
     });
-
-
-
-
-
-
-
-
-
-
-
 
 
     app.get('/textfocus/:id', function (request, response) {
@@ -145,7 +230,6 @@ var router = function (app) {
                     .then(function (text) {
                         response.redirect('/text/' + text.id)
                     });
-
             })
         }
     });
