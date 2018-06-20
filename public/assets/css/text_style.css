@@ -4,6 +4,9 @@
     font-weight: normal;
 }
 
+body {
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
 .wrapper {
     margin: 0 auto;
     width: 960px;
@@ -22,12 +25,27 @@ nav ul li:hover {
 nav {
     height: 30px;
     line-height: 30px;
-    background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
+    background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);
 }
 
 nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
     height: 30px;
     line-height: 30px;
+}
+
+.whatthetextimg {
+    max-width: 30%;
+    float: left;
+    padding: 10px;
+    margin-left: auto;
+	margin-right: auto;
+    display: block;
+    /* position: relative; */
+}
+
+.everyonestexts, .everyonestextsdiv {
+    height: 4000px;
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);    
 }
 
 nav .button-collapse i {
@@ -37,6 +55,10 @@ nav .button-collapse i {
 
 nav .brand-logo { 
     font-size: 1.6rem; 
+}
+
+.onuserhome {
+    margin-right: 30px;
 }
 
 @media only screen and (min-width: 601px){
@@ -76,6 +98,16 @@ nav .brand-logo {
     height: 64px;
     margin-top: 8px;
 }
+.comments {
+    margin: 10px;
+    display: block;
+}
+
+.date {
+    margin: 10px;
+    display: block;
+}
+
 
 .shameemoji {
     width: 73px;
@@ -111,21 +143,57 @@ nav .brand-logo {
 }
 
 .aboutsite {
-    margin-top: 18px;
+    padding-left: 10px!important;
+    margin-top: -66px;
+    box-shadow: 0 4px 8px 0 rgba(95, 255, 3, 0.2), 0 20px 20px 0 rgba(49, 173, 255, 0.19);
+    height: 450px!important;
 }
 
-.aboutsite p {
-    margin-top: -10px;
+.scrollingtexts img {
+    max-width: 50%;
+    margin-left: 90px;
+    padding-bottom: 30px;
 }
+
+.signinupemojis .signuplogoimg, .signinupemojis .signinlogoimg {
+    width: 40%;
+}
+
 
 h2 {
     font-family: "wagner";
 }
 
+.closerlook {
+    padding-top: 15px;
+    font-family: "wagner";
+}
+
+.specifictext img {
+    max-width: 42%;
+    margin-left: 130px;
+}
+
+.specifictext {
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);    
+}
+
+.categorytext {
+    font-family: "wagner";
+}
+
+.categorylogo {
+    width: 100%;
+}
+
+.aboutwhatthetext {
+    font-family: "wagner";
+    font-size: 17px;
+}
+
 .trending {
     overflow-y: scroll;
-    height: 395px;
-    margin-top: 10px;
+    height: 503px;
 }
 
 div#wn { 
@@ -135,14 +203,14 @@ div#wn {
 }
 
 .welcomebox {
-    background-color: rgba(240, 228, 228, 0.651);
-    padding: 10px;
-    height: 500px;
+    height: 510px;
+    margin-top: -20px;
+    box-shadow: 0 4px 8px 0 rgba(95, 255, 3, 0.2), 0 20px 20px 0 rgba(49, 173, 255, 0.19);
 }
 
 .jointext {
-    margin-top: 18px!important;
-    margin-bottom: -2px!important;
+    margin-top: 10px!important;
+    margin-bottom: 50px!important;
 }
 
 .signinform {
@@ -178,6 +246,7 @@ ul.tabs {
 
 .tabs {
     margin-left: -10px;
+    box-shadow: 0 4px 8px 0 rgba(3, 184, 255, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .tabs .indicator {
@@ -186,6 +255,7 @@ ul.tabs {
 
 .tabs a:hover {
     text-decoration: none;
+    background-color: none;
 }
 
 a:hover {
@@ -215,19 +285,19 @@ a:hover {
 }
 
 .longlogo {
-    width: 60%;
-    margin-top: -70px;
-    margin-left: 2px;
+    width: 59%;
+    margin-left: 70px;
+    margin-top: -60px;
 }
 
 .trending {
-    background-color: rgb(247, 243, 243);
     padding: 10px;
 }
 
 .textupload {
     background-color: rgb(240, 240, 240);
     height: 600px;
+    box-shadow: 0 4px 8px 0 rgba(96, 114, 86, 0.2), 0 10px 20px 0 rgba(49, 173, 255, 0.19);
 }
 
 .textcategories {
@@ -246,16 +316,12 @@ a:hover {
     letter-spacing: 1.8px;
 }
 
-.categorytext {
-    padding-right: 15px;
-}
-
 #drop-area {
-    border: 2px dashed #ccc;
+    /* border: 2px dashed #ccc; */
     border-radius: 20px;
-    width: 480px;
+    width: 330px;
     font-family: sans-serif;
-    padding: 20px;
+    padding: 10px;
   }
 
 .addtext {
@@ -314,12 +380,12 @@ p {
 
 .showmebox {
     padding-left: 20px!important;
+    line-height: 50x;
 }
 
 .textfeedlogo {
-    width: 90%;
+    width: 80%;
     margin-top: 5px;
-    margin-left: 2px;
 }
 
 [type="radio"]:checked + span:after,
@@ -354,6 +420,7 @@ p {
       height: 400px;
       background-color: rgb(233, 231, 231);
       padding: 5px;
+      box-shadow: 0 4px 8px 0 rgba(95, 255, 3, 0.2), 0 10px 20px 0 rgba(49, 173, 255, 0.19);
 }
 
 .postedby {
@@ -384,18 +451,43 @@ p {
 }
 
 @media (min-width:1170px) {
+
     .tabwrapperdiv {
         position: relative;
     }
 
     ul.tabs {
-        width: 70%;
+        width: 69.6%;
     }
     
     .tabwrapper {
         position: absolute;
         right: -30px;
-        top: -16px;
+        top: -2px;
+    }
+
+    .aboutsite {
+        margin-top: -20px;
+        height: 409px;
+    }
+
+    .trending {
+        height: 409px;
+    }
+
+    .welcomebox {
+        margin-top: 27px;
+        height: 405px;
+    }
+
+    .longlogo {
+        width: 110%;
+        margin-left: -70px;
+        margin-top: -20px;
+    }
+
+    .aboutwhatthetext {
+        margin-top: 40px;
     }
 }
 
@@ -405,16 +497,276 @@ p {
     }
 
     ul.tabs {
-        width: 240%;
+        width: 232%;
     }
     
     .tabwrapper {
         position: absolute;
         right: -30px;
-        top: -16px;
+        top: -2px;
     }
 
     .signupform {
         margin-top: -12px;
+    }
+
+    .trending {
+        height: 420px;
+    }
+
+    .longlogo {
+        width: 110%;
+        margin-left: -70px;
+        margin-top: -20px;
+    }
+
+    .categorylogo {
+        width: 70%;
+    }
+
+    .aboutwhatthetext {
+        margin-top: 40px;
+    }
+}
+
+@media only screen and (min-width : 601px) and (max-width : 700px) {
+    .wrapper {
+      width: 85%; } 
+    }
+
+@media only screen and (max-width : 860px) {
+    .uploadfile {
+        margin-right: 30px;
+    }
+
+    }
+
+@media only screen and (min-width : 993px) and (max-width : 1170px) {
+
+    .uploadfile {
+        margin-top: 60px;
+    }
+
+    .longlogo {
+        margin-top: -100px;
+    }
+
+
+    .trending {
+        height: 345px;
+    }
+
+    .welcomebox {
+        height: 400px;
+    }
+
+    ul.tabs {
+        width: 69.6%;
+    }
+
+    .categorylogo {
+        width: 70%;
+    }
+
+    .longlogo {
+        width: 110%;
+        margin-left: -70px;
+        margin-top: -20px;
+    }
+
+    .aboutwhatthetext {
+        margin-top: 40px;
+    }
+
+}
+
+@media only screen and (max-width : 992px) {
+    .wrapper {
+        width: 90%; } 
+
+    .textfeedlogo {
+        margin-left: 55px;
+    }
+
+    .showmebox {
+        margin-top: 20px;
+    }
+
+    .drop-area {
+        width: 5000px;
+    }
+
+    .longlogo {
+        width: 110%;
+        margin-left: -70px;
+        margin-top: -20px;
+    }
+
+    .aboutwhatthetext {
+        margin-top: 40px;
+    }
+
+    .aboutsite {
+        margin-top: -70px;
+        height: 400px;
+    }
+
+    .trending {
+        height: 410px;
+    }
+
+    .welcomebox {
+        height: 400px;
+    }
+        
+    }
+
+@media only screen and (min-width : 801px) {
+    .uploadfile {
+        margin-right: -50px;
+    }
+
+    .showmebox {
+        padding-left: 80px!important;
+    }
+
+
+    .trending {
+        height: 390px;
+    }
+}
+
+@media only screen and (min-width : 701px) and (max-width : 800px) {
+    .uploadfile {
+        margin-right: -50px;
+    }
+
+    ul.tabs {
+        width: 70.8%;
+    }
+
+    .showmebox {
+        padding-left: 60px!important;
+    }
+
+}
+
+@media only screen and (min-width : 601px) and (max-width : 700px) {
+    .uploadfile {
+        margin-right: -60px;
+    }
+
+    ul.tabs {
+        width: 71.1%;
+    }
+
+    #drop-area {
+        width: 310px;
+      }
+
+    .longlogo {
+        width: 110%;
+        margin-left: -70px;
+        margin-top: 20px;
+    }
+
+    .aboutwhatthetext {
+        margin-top: 40px;
+    }
+}
+
+@media only screen and (max-width : 601px) and (min-width : 550px) {
+    nav {
+        height: 100px;
+    }
+
+    .aboutsite {
+        margin-top: 10px;
+    }
+
+    ul.tabs {
+        width: 103.2%;
+    }
+
+    .categorylogo {
+        width: 200%;
+    }
+
+    .showmebox {
+        padding-left: 20px!important;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width : 600px) {
+
+    ul.tabs {
+        width: 104.3%;
+    }
+
+    .uploadfile {
+        margin-right: 90px;
+    }
+
+    #drop-area {
+        width: 190px;
+        margin: 10px;
+      }
+}
+
+@media only screen and (max-width : 550px) {
+    .wrapper {
+        width: 90%; } 
+
+    nav {
+        height: 90px;
+    }
+
+    .aboutsite {
+        margin-top: 10px;
+    }
+
+    .uploadfile {
+        margin-right: 70px;
+    }
+
+    .categorylogo {
+        width: 200%;
+    }
+
+    .textcaption {
+        padding: 0 1px 15px 1px!important;
+    }
+
+    .textcategoriesdiv {
+        padding: 10px 1px 15px 30px!important;
+    }
+
+    .textuploadsubmit {
+        margin-left: 110px!important;
+    }
+
+    .showmebox {
+        padding-left: 10px!important;
+        text-align: center;
+    }
+
+    #drop-area {
+        width: 110px;
+        margin: 10px;
+      }
+}
+
+@media only screen and (max-width : 500px) {
+
+    ul.tabs {
+        width: 105%;
+    }
+}
+
+@media only screen and (max-width : 450px) {
+
+    ul.tabs {
+        width: 106%;
     }
 }
